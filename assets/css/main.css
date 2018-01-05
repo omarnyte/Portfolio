@@ -2221,7 +2221,6 @@
 		}
 
 /* Icon */
-
 	.icon {
 		text-decoration: none;
 		border-bottom: none;
@@ -2235,6 +2234,10 @@
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
+		}
+
+		.icon.devicon:before {
+			font-family: inherit;
 		}
 
 		.icon > .label {
@@ -2280,6 +2283,10 @@
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
+			}
+
+			.icon.major.devicon:before {
+				font-family: inherit;
 			}
 
 			.icon.major:before {
