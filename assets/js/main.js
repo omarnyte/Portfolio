@@ -1,18 +1,18 @@
 /*
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
 (function($) {
 
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1140px)',
+		large: '(max-width: 1280px)',
 		medium: '(max-width: 980px)',
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 320px)'
+		xxsmall: '(max-width: 360px)'
 	});
 
 	$(function() {
@@ -26,22 +26,35 @@
 			$window.on('load', function() {
 				window.setTimeout(function() {
 					$body.removeClass('is-loading');
-				}, 250);
+				}, 100);
 			});
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
 
-		// Prioritize "important" elements on mobile.
-			skel.on('+mobile -mobile', function() {
+		// Prioritize "important" elements on medium.
+			skel.on('+medium -medium', function() {
 				$.prioritize(
-					'.important\\28 mobile\\29',
-					skel.breakpoint('mobile').active
+					'.important\\28 medium\\29',
+					skel.breakpoint('medium').active
 				);
 			});
 
-		// Scrolly.
-			$('.scrolly').scrolly();
+		// Items.
+			$('.item').each(function() {
+
+				var $this = $(this),
+					$header = $this.find('header'),
+					$a = $header.find('a'),
+					$img = $header.find('img');
+
+				// Set background.
+					$a.css('background-image', 'url(' + $img.attr('src') + ')');
+
+				// Remove original image.
+					$img.remove();
+
+			});
 
 	});
 
