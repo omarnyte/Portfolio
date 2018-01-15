@@ -5,13 +5,19 @@
 }
 
 .skill {
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;}
+  align-items: center;
+}
 
 .i {
-  font-family: inherit; 
-  font-size: 100px; 
-  
-  margin: 10px; 
+  font-family: inherit;
+  font-size: 100px;
+
+  margin: 10px;
+}
+
+.icon {
+  font-size: 50px; 
 }
